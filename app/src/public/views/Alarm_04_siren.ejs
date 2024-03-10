@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>alert</title>
+  <link rel="stylesheet" href="../css/menubar.css">
+
+  <link rel="stylesheet" href="../css/Alarm_05.css">
+
+
+
+</head>
+
+<body>
+
+
+  <div class="main">
+    <div class="header">
+      <img onclick="location.href='/Main'" src="../ihu_logo2.png" style="cursor: pointer;" class="ihu_logo2">
+    </div>
+    <a href="#cd-nav" class="cd-nav-trigger">Menu
+      <span class="cd-nav-icon"></span>
+
+      <svg x="0px" y="0px" width="54px" height="54px" viewBox="0 0 54 54">
+        <circle fill="transparent" stroke="#656e79" stroke-width="1" cx="27" cy="27" r="25" stroke-dasharray="157 157"
+          stroke-dashoffset="157"></circle>
+      </svg>
+    </a>
+    <div id="cd-nav" class="cd-nav">
+      <div class="cd-navigation-wrapper">
+        <div class="cd-half-block">
+
+
+          <nav>
+            <ul class="cd-primary-nav">
+              <li><a href="#">음성채팅</a></li>
+              <li><a href="#">소리알림</a></li>
+              <li><a href="#">기간통계</a></li>
+              <li><a href="#">위치통계</a></li>
+              <li><a href="#">환경설정</a></li>
+              <li><a href="/">로그아웃</a></li>
+            </ul>
+          </nav>
+        </div><!-- .cd-half-block -->
+      </div> <!-- .cd-navigation-wrapper -->
+    </div> <!-- .cd-nav -->
+
+    <img id="notification-image" src="../alert1.png" alt="알림 이미지">
+    <div id="not_text">
+      <div id="notification-text"></div>
+    </div>
+
+    <div id="background-animation"></div>
+  </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../js/menubar.js"></script>
+<script src="../js/Alarm_05.js"></script>
+
+</html>

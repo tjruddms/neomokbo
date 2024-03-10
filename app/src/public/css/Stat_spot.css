@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  font-family: 'GmarketSansMedium';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(219, 230, 241);
+}
+
+.main {
+
+  height: 100%;
+  width: 600px;
+
+  background: rgba(42, 76, 124, 0.686);
+  color: #fff;
+  border-radius: 10px;
+
+
+  position: relative;
+
+}
+
+
+
+/*헤더 */
+.header {
+  background-color: #243040;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  width: 600px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  border-radius: 10px 10px 0 0;
+}
+
+.ihu_logo2 {
+  width: 200px;
+}
+
+/*달력*/
+
+.spot_bg {
+  position: absolute;
+  margin-top: 40px;
+  width: 100%;
+  height: 90%;
+  z-index: 0;
+  /* 이미지가 다른 내용 위에 레이어로 표시되도록 함 */
+}
+
+/*날짜선택*/
+.calendar {
+  z-index: 10;
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 60px;
+}
+
+.div-for-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-for-buttons * {
+  margin: 2px 1px !important;
+}
+
+.date-selector {
+  display: flex;
+  width: 500px;
+  padding-right: 20px;
+}
+
+.date-selector {
+  display: flex;
+  justify-content: center;
+  /* margin-top: 20px; */
+}
+
+.date-selector button {
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f2f8ff;
+
+  border: none;
+  color: #243040;
+  border-radius: 5px;
+  width: 160px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 0 1px;
+  /* 좌우 간격을 5px로 조절 */
+}
+
+
+
+
+.date-selector button:hover {
+  background-color: #a4b4ca;
+
+}
+
+.date-range-picker {
+
+  position: absolute;
+  background-color: #455d7b;
+
+  padding: 0px 0px 10px;
+  z-index: 1000;
+  border-radius: 5px;
+  width: 480px;
+  margin-top: 5px;
+}
+
+.date-range-picker input[type="date"] {
+  width: 160px;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.date-range-picker button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #d7e1ed;
+  /* Green */
+  border: none;
+  color: #243040;
+  border-radius: 5px;
+  width: 100px;
+}
+
+.date-range-picker button:hover {
+  background-color: #a6bad5;
+}
+
+/*지도*/
+
+#map {
+  border-radius: 0px 0px 20px 20px;
+  margin-top: 312px;
+  margin-left: 57px;
+}

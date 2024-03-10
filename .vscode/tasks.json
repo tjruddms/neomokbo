@@ -1,0 +1,60 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build_task",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "",
+			"args": [
+				"cd",
+				"app",
+				";",
+				"npm",
+				"start"
+			],
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+		},
+		{
+			"label": "autocommit",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "",
+			"args": [
+				"git",
+				"add",
+				"--all",
+				";",
+				"git",
+				"commit",
+				"-m \"auto push\"",
+				";",
+				"git",
+				"push",
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": false,
+				"clear": true
+			},
+		}
+	]
+}

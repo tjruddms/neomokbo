@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  font-family: 'GmarketSansMedium';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(219, 230, 241);
+}
+
+.main {
+
+  height: 100%;
+  width: 600px;
+
+  background: rgba(42, 76, 124, 0.686);
+  color: #fff;
+  border-radius: 10px;
+  padding: 150px 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  position: relative;
+
+}
+
+
+
+/*헤더 */
+.header {
+  background-color: #243040;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  width: 600px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  border-radius: 10px 10px 0 0;
+}
+
+.ihu_logo2 {
+  width: 200px;
+}

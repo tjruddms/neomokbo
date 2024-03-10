@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.17.0",
+    "@tensorflow/tfjs-node": "^4.17.0"
+  },
+  "name": "deeplearningtest",
+  "version": "1.0.0",
+  "main": "tjfs.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node tfjs.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

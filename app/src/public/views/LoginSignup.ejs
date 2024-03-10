@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoginPage</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../css/LoginSignup.css">
+  <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.0/kakao.min.js"
+    integrity="sha384-l+xbElFSnPZ2rOaPrU//2FF5B4LB8FiX5q4fXYTlfcG4PGpMkE1vcL7kNXI6Cci0"
+    crossorigin="anonymous"></script>
+  <script>
+    Kakao.init('5fde4f742c706b1cc79c057da0568f06'); // 사용하려는 앱의 JavaScript 키 입력
+  </script>
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div class="form-wrapper sign-in">
+      <img src="../ihu_logo.png" alt="" class="logo">
+      <form action="" id="form_login" style="width: 30vw;">
+
+        <div class="input-box">
+
+          <input type="email" id="login_email" placeholder="이메일">
+          <i class="bi bi-person-fill"></i>
+        </div>
+        <div class="input-box">
+
+          <input type="password" placeholder="비밀번호" id="login_pw">
+          <span class="eye" onclick="myFunction()">
+            <i id="hide1" class="bi bi-eye"></i>
+            <i id="hide2" class="bi bi-eye-slash"></i>
+          </span>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox">로그인 상태 유지</label>
+          <a href="#">비밀번호를 잊어버리셨나요?</a> </a>
+        </div>
+        <div class="social_login">
+          <a class="kakao" href="javascript:loginWithKakao()">카카오톡</a>
+          <a class="google">구글</a>
+          <a class="naver">네이버</a>
+        </div>
+        <button type="submit" class="login-btn">로그인</button>
+        <div class="register-link">
+          <p>계정이 없으신가요? <a href="#"> 가입하기</a></p>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-wrapper sign-up">
+      <form id="register_form" action="" style="width: 30vw;">
+        <h1>회원가입</h1>
+        <div class="input-box2">
+          <input type="email" id="register_email" required>
+          <label for="">이메일</label>
+        </div>
+        <div class="input-box2">
+          <input type="password" id="resgister_pw" class="password" required>
+          <label for="password">비밀번호</label>
+        </div>
+        <div class="input-box2">
+          <input type="password" id="confirm_pw" class="confirmPassword" required>
+          <label for="confirmPassword">비밀번호 확인</label>
+        </div>
+        <div class="register-link">
+          <label>
+            <input type="checkbox" id="termsCheckbox" onchange="enableRegisterButton()">
+            <span id="dored"> <a href="#" id="openModal">이용약관</a> 에 동의합니다.</span>
+            <!-- 모달 창 -->
+            <div id="myModal" class="modal">
+              <div class="modal-content">
+                <span class="close">닫기&times;</span>
+                <p id="textFileContent"></p>
+              </div>
+            </div>
+          </label>
+        </div>
+        <button type="submit" class="signup-btn" id="register_btn" disabled>가입하기</button>
+        <div class="login-link">
+          이미 계정이 있으신가요? <a href="#">로그인</a>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</body>
+
+<script src="../js/LoginSignup.js"></script>
+<script>
+  function loginWithKakao() {
+    Kakao.Auth.authorize({
+      redirectUri: 'http://localhost:3000/social_login/kakao',
+    });
+  }
+  displayToken()
+  function displayToken() {
+    var token = getCookie('authorize-access-token');
+
+    if (token) {
+      Kakao.Auth.setAccessToken(token);
+      Kakao.Auth.getStatusInfo()
+        .then(function (res) {
+          if (res.status === 'connected') {
+            document.getElementById('token-result').innerText
+              = 'login success, token: ' + Kakao.Auth.getAccessToken();
+          }
+        })
+        .catch(function (err) {
+          Kakao.Auth.setAccessToken(null);
+        });
+    }
+  }
+
+  function getCookie(name) {
+    var parts = document.cookie.split(name + '=');
+    if (parts.length === 2) { return parts[1].split(';')[0]; }
+  }
+</script>
+
+</html>

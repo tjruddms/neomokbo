@@ -1,0 +1,322 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'GmarketSansMedium';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(219, 230, 241);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+*,
+*::after,
+*::before {
+
+  box-sizing: border-box;
+}
+
+body *::-webkit-scrollbar {
+  display: none !important;
+}
+
+body,
+html {
+  /* prevent horizontal scrolling */
+  overflow-x: hidden;
+}
+
+a {
+  color: #9cb3a8;
+  text-decoration: none;
+}
+
+
+
+.cd-nav-trigger {
+  position: absolute;
+  margin-top: -20px;
+  z-index: 3000;
+  left: 5%;
+  top: 5%;
+  height: 54px;
+  width: 54px;
+  background-color: #243040;
+  border-radius: 50%;
+  /* image replacement */
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+
+  transition: transform 0.5s;
+}
+
+.cd-nav-trigger .cd-nav-icon {
+  /* icon created in CSS */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+
+  transform: translateX(-50%) translateY(-50%);
+  width: 22px;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+.cd-nav-trigger .cd-nav-icon::before,
+.cd-nav-trigger .cd-nav-icon:after {
+  /* upper and lower lines of the menu icon */
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  /* Force Hardware Acceleration in WebKit */
+
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+
+  transition: transform 0.5s, width 0.5s, top 0.3s;
+}
+
+.cd-nav-trigger .cd-nav-icon::before {
+
+  transform-origin: right top;
+
+  transform: translateY(-6px);
+}
+
+.cd-nav-trigger .cd-nav-icon::after {
+
+  transform-origin: right bottom;
+
+  transform: translateY(6px);
+}
+
+.no-touch .cd-nav-trigger:hover .cd-nav-icon::after {
+  top: 2px;
+}
+
+.no-touch .cd-nav-trigger:hover .cd-nav-icon::before {
+  top: -2px;
+}
+
+.cd-nav-trigger svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cd-nav-trigger circle {
+  /* circle border animation */
+
+  transition: stroke-dashoffset 0.4s 0s;
+}
+
+.navigation-is-open .cd-nav-trigger {
+  /* rotate trigger when navigation becomes visible */
+
+  transform: rotate(180deg);
+}
+
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::after,
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::before {
+  /* animate arrow --> from hamburger to arrow */
+  width: 50%;
+
+  transition: transform 0.5s, width 0.5s;
+}
+
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::before {
+
+  transform: rotate(45deg);
+}
+
+.navigation-is-open .cd-nav-trigger .cd-nav-icon::after {
+
+  transform: rotate(-45deg);
+}
+
+.no-touch .navigation-is-open .cd-nav-trigger:hover .cd-nav-icon::after,
+.no-touch .navigation-is-open .cd-nav-trigger:hover .cd-nav-icon::before {
+  top: 0;
+}
+
+.navigation-is-open .cd-nav-trigger circle {
+  stroke-dashoffset: 0;
+
+  transition: stroke-dashoffset 0.4s 0.3s;
+}
+
+@media only screen and (min-width: 1170px) {
+  .cd-nav-trigger {
+    top: 40px;
+  }
+}
+
+.cd-nav {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #243040;
+  visibility: hidden;
+  border-radius: 10px;
+
+  transition: visibility 0s 0.7s;
+}
+
+.cd-nav .cd-navigation-wrapper {
+  /* all navigation content */
+  height: 100%;
+  overflow-y: auto;
+
+  padding: 40px 5% 40px calc(5% + 80px);
+  /* Force Hardware Acceleration in WebKit */
+
+  transform: translateZ(0);
+
+  backface-visibility: hidden;
+
+  transform: translateX(-20%);
+
+  transition: transform 0.7s;
+
+  transition-timing-function: cubic-bezier(0.86, 0.01, 0.77, 0.78);
+}
+
+.navigation-is-open .cd-nav {
+  visibility: visible;
+
+  transition: visibility 0s 0s;
+}
+
+.navigation-is-open .cd-nav .cd-navigation-wrapper {
+
+  transform: translateX(8%);
+
+  transition: transform 0.5s;
+
+  transition-timing-function: cubic-bezier(0.82, 0.01, 0.77, 0.78);
+}
+
+
+
+.cd-nav .cd-primary-nav {
+  margin-top: 60px;
+}
+
+.cd-nav .cd-primary-nav li {
+  margin: 1.6em 0;
+}
+
+.cd-nav .cd-primary-nav a {
+  font-family: 'GmarketSansMedium';
+  font-size: 0.5rem;
+  color: rgba(255, 255, 255, 0.959);
+  display: inline-block;
+}
+
+.cd-nav .cd-primary-nav a.selected {
+  color: #ffffff;
+}
+
+.no-touch .cd-nav .cd-primary-nav a:hover {
+  color: #ffffff;
+}
+
+
+
+@media only screen and (min-width: 600px) {
+  .cd-nav .cd-navigation-wrapper {
+    padding: 70px 20%;
+  }
+
+  .cd-nav .cd-navigation-wrapper::after {
+    clear: both;
+    content: "";
+    display: table;
+
+  }
+
+  .cd-nav .cd-half-block {
+    width: 70%;
+    float: left;
+  }
+
+  .cd-nav .cd-primary-nav {
+    margin-top: 40%;
+  }
+
+  .cd-nav .cd-primary-nav li {
+    margin: 4em 0;
+    text-align: center;
+  }
+
+  /*메뉴목록 폰트크기*/
+  .cd-nav .cd-primary-nav a {
+    font-size: 1.8rem;
+  }
+
+
+}
+
+.no-js main {
+  height: auto;
+  overflow: visible;
+}
+
+.no-js .cd-nav {
+  position: static;
+  visibility: visible;
+}
+
+.no-js .cd-nav .cd-navigation-wrapper {
+  height: auto;
+  overflow: visible;
+  padding: 100px 5%;
+
+  transform: translateX(0);
+}

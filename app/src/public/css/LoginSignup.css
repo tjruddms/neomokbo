@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "GmarketSansMedium";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(219, 230, 241);
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 600px;
+  background: transparent;
+  background: rgba(42, 76, 124, 0.686);
+  color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  overflow: hidden;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  transition: 1s ease-in-out;
+  margin-top: 15%;
+}
+
+.wrapper.active .form-wrapper.sign-in {
+  transform: translateY(-100vh);
+}
+
+.wrapper .form-wrapper.sign-up {
+  position: absolute;
+  top: 600px;
+  left: 0;
+}
+
+.wrapper.active .form-wrapper.sign-up {
+  transform: translateY(-90vh);
+}
+
+.wrapper.active .form-wrapper.sign-up.login-link {
+  transform: translateY(-90vh);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-wrapper .input-box {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 2);
+  border-radius: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 20px 45px 20px 20px;
+}
+
+.input-box input::placeholder {
+  color: #fff;
+}
+
+.input-box .eye {
+  position: absolute;
+
+  transform: translateY(50%);
+  font-size: 20px;
+}
+
+.input-box i {
+  position: absolute;
+  right: 20px;
+  transform: translateY(50%);
+  font-size: 20px;
+}
+
+.form-wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin: -15px 0 15px;
+}
+
+.remember-forgot label input {
+  accent-color: #fff;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.register-link label input {
+  accent-color: #fff;
+  margin-right: 3px;
+  vertical-align: middle;
+}
+
+.remember-forgot a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+#hide1 {
+  display: none;
+}
+
+.form-wrapper .login-btn {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: rgba(42, 76, 124, 0.686);
+  font-weight: 600;
+}
+
+/*소셜로그인버튼*/
+.form-wrapper .social_login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: rgba(42, 76, 124, 0.686);
+  font-weight: 600;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.form-wrapper .social_login a {
+  flex: 1;
+  text-align: center;
+  text-decoration: none;
+  line-height: 25px;
+  color: rgba(42, 76, 124, 0.686);
+  transition: color 0.3s;
+}
+
+.form-wrapper .social_login a.kakao:hover {
+  color: #ffea00cc;
+  /* 카카오톡 링크 호버 시 색상 변경 */
+}
+
+.form-wrapper .social_login a.naver:hover {
+  color: #1ec800;
+  /* 네이버 링크 호버 시 색상 변경 */
+}
+
+.form-wrapper .social_login a.google:hover {
+  color: #db4537bc;
+  /* 구글 링크 호버 시 색상 변경 */
+}
+
+.form-wrapper .social_login a:not(:last-child) {
+  border-right: 2px solid rgba(42, 76, 124, 0.686);
+  margin-right: 5px;
+  /* 링크 사이 간격 조절 */
+}
+
+
+
+
+.form-wrapper .signup-btn {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: rgba(42, 76, 124, 0.686);
+  font-weight: 600;
+}
+
+.form-wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+.form-wrapper .login-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.login-link a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/* 회원가입 부분*/
+.input-box2 {
+  position: relative;
+  width: 100%;
+  margin: 30px 0;
+  border-bottom: 2px solid #fff;
+}
+
+.input-box2 label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.3s;
+  opacity: 70%;
+}
+
+.input-box2 input {
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  color: #fff;
+  padding: 0 5px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.input-box2 input:focus~label,
+.input-box2 input:valid~label {
+  top: -5px;
+}
+
+.red_font {
+  color: red;
+}
+
+/*모달창 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px 10px;
+}
+
+.modal::-webkit-scrollbar {
+  display: none;
+}
+
+.close {
+  background-color: rgba(42, 76, 124, 0.686);
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 0 10px 0 10px;
+  font-size: 20px;
+  /* 츄베릅 */
+}
+
+.logo {
+  z-index: 0;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 550px;
+  position: absolute;
+}

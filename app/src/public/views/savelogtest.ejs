@@ -1,0 +1,63 @@
+<title>로그저장테스트</title>
+
+<body>
+
+  <form id="form_savelog">
+    <input type="text" id="sclass"> 클래스값
+    <br>
+    <button>전송하기</button>
+  </form>
+
+  <h1 id="result"></h1>
+</body>
+
+<script>
+  const sclass = document.querySelector("#sclass")
+  const form_savelog = document.querySelector("#form_savelog")
+  const req = { email: "", lati: 0, long: 0, sclass: 0 }
+  const result = document.querySelector("#result")
+  result.innerHTML = "실행대기중"
+
+  form_savelog.addEventListener("submit", savelog)
+
+  function savelog(eve) {
+    eve.preventDefault();
+
+    navigator.geolocation.getCurrentPosition((position) => {
+      req.lati = position.coords.latitude
+      req.long = position.coords.longitude
+      req.email = "dydals2n@naver.com"
+      req.sclass = sclass.value
+      console.log(req);
+      SendReq(req);
+    });
+
+
+  };
+  function SendReq(req) {
+    fetch("/SaveLog", {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(req),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        if (res.success) {
+          location.href = "/";
+        } else {
+          if (res.err) {
+            result.innerHTML = "로그 저장 실패"
+            return console.log(res.err)
+          };
+          console.log(res.msg);
+          result.innerHTML = "로그 저장 성공"
+        }
+      })
+      .catch((err) => {
+        console.error(new Error("로그인 중 에러 발생"))
+      })
+  }
+
+</script>

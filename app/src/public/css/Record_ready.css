@@ -1,0 +1,207 @@
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "GmarketSansMedium";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(219, 230, 241);
+}
+
+.main {
+  height: 100%;
+  width: 600px;
+
+  background: rgba(42, 76, 124, 0.686);
+  color: #fff;
+  border-radius: 10px;
+
+  position: relative;
+}
+
+/*헤더 */
+.header {
+  background-color: #243040;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  width: 600px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  border-radius: 10px 10px 0 0;
+}
+
+.ihu_logo2 {
+  width: 200px;
+}
+
+p {
+  color: rgb(25, 20, 53);
+  font: 500 2.5em/150% GmarketSansMedium;
+  z-index: 500;
+  position: absolute;
+
+  /* 화면 하단에서 20px 위에 위치 */
+}
+
+.loading {
+  position: absolute;
+  bottom: 0;
+  left: 330px;
+  /* 가운데 정렬을 위해 왼쪽을 50%로 설정 */
+  transform: translateX(-50%);
+  /* 가운데 정렬 */
+  margin-bottom: 20%;
+  width: 50%;
+}
+
+p.loading:after {
+  content: ".";
+  animation: dots 2.7s steps(5, end) infinite;
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+
+  40% {
+    color: rgb(25, 20, 53);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+
+  60% {
+    text-shadow: 0.25em 0 0 rgb(25, 20, 53), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 rgb(25, 20, 53), 0.5em 0 0 rgb(25, 20, 53);
+  }
+}
+
+/*마이크 아이콘*/
+.mic_icon {
+  width: 500px;
+  margin-left: -3%;
+  margin-bottom: 10%;
+  bottom: 0;
+  position: absolute;
+}
+
+/*로딩바*/
+
+.bar_loading {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 300px;
+  /* 가운데 정렬을 위해 왼쪽을 50%로 설정 */
+  transform: translateX(-50%);
+  /* 가운데 정렬 */
+  margin-bottom: 60%;
+  width: 50%;
+  z-index: -20;
+}
+
+.bar_loading span {
+  display: inline-block;
+  background-color: rgba(42, 76, 124, );
+  width: 15px;
+  height: 60px;
+  animation: soundwave 3s infinite ease-in-out;
+}
+
+.bar_loading span:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.bar_loading span:nth-of-type(3) {
+  animation-delay: 0.4s;
+}
+
+.bar_loading span:nth-of-type(4) {
+  animation-delay: 0.6s;
+}
+
+.bar_loading span:nth-of-type(5) {
+  animation-delay: 0.8s;
+}
+
+.bar_loading span:nth-of-type(6) {
+  animation-delay: 1s;
+}
+
+.bar_loading span:nth-of-type(7) {
+  animation-delay: 1.2s;
+}
+
+.bar_loading span:nth-of-type(8) {
+  animation-delay: 1.4s;
+}
+
+.bar_loading span:nth-of-type(9) {
+  animation-delay: 1.6s;
+}
+
+.bar_loading span:nth-of-type(10) {
+  animation-delay: 1.8s;
+}
+
+.bar_loading span:nth-of-type(11) {
+  animation-delay: 2s;
+}
+
+.bar_loading span:nth-of-type(12) {
+  animation-delay: 2.2s;
+}
+
+.bar_loading span:nth-of-type(13) {
+  animation-delay: 2.4s;
+}
+
+.bar_loading span:nth-of-type(14) {
+  animation-delay: 2.6s;
+}
+
+.bar_loading span:nth-of-type(15) {
+  animation-delay: 2.8s;
+}
+
+.bar_loading span:nth-of-type(16) {
+  animation-delay: 3s;
+}
+
+@keyframes soundwave {
+
+  0%,
+  50%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  20% {
+    transform: scaleY(3);
+    background-color: #243040;
+  }
+}

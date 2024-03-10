@@ -1,0 +1,110 @@
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+* {
+  font-family: 'GmarketSansMedium';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(219, 230, 241);
+}
+
+.main {
+
+  height: 100%;
+  width: 600px;
+
+  background: rgba(42, 76, 124, 0.686);
+  color: #fff;
+  border-radius: 10px;
+  padding: 150px 70px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 40px;
+  position: relative;
+
+}
+
+
+
+/*헤더 */
+.header {
+  background-color: #243040;
+  color: white;
+  text-align: center;
+  padding: 30px;
+  position: absolute;
+  width: 600px;
+  height: 90px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  border-radius: 10px 10px 0 0;
+}
+
+.ihu_logo2 {
+  width: 200px;
+}
+
+/*알림 css*/
+
+
+#notification-image {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s ease-in-out;
+  z-index: 2;
+}
+
+
+#background-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  animation: blinkAnimation 3s infinite;
+  border-radius: 10px 10px 0 0;
+
+
+}
+
+#not_text {
+  height: 100%;
+  width: 1000px;
+  position: absolute;
+
+}
+
+#notification-text {
+  position: absolute;
+  top: 60%;
+  /* 부모 요소의 높이 기준으로 50% */
+  left: 23%;
+
+  /* 부모 요소의 너비 기준으로 50% */
+  transform: translate(-50%, -50%);
+  /* 수평 및 수직 정렬을 위한 변형 */
+  font-size: 50px;
+  text-align: center;
+  z-index: 2;
+}
